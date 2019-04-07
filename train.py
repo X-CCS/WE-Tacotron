@@ -36,7 +36,7 @@ def get_embedding_input(em_infos, length):
         if cat_temp.size(0) < length:
             # print("###############")
             cat_temp = torch.cat([cat_temp, torch.stack(
-                torch.zeros(768) for i in range(length-cat_temp.size(0)))], 0)
+                [torch.zeros(768) for i in range(length-cat_temp.size(0))])], 0)
             # print(cat_temp.size())
             # cat_temp = 0
         # print(cat_temp.size())
