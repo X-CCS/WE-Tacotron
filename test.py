@@ -67,10 +67,10 @@ if __name__ == "__main__":
 
     # Load checkpoint
     checkpoint = torch.load(os.path.join(
-        hparams.checkpoint_path, 'checkpoint_48800.pth.tar'))
+        hparams.checkpoint_path, 'checkpoint_100000.pth.tar'))
     model.load_state_dict(checkpoint['model'])
     print("Sucessfully Loaded.")
 
-    text = "produced the block books."
+    text = "How are you?"
     wav = synthesizer(model, model_bert, tokenizer, text, device)
     audio.save_wav(wav, "test.wav")
